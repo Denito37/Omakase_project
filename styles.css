@@ -11,6 +11,25 @@ body{
     display:flex;
     flex-direction: column;
 }
+button{
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+    color: #26589F;
+    font-family: 'PT Sans Narrow',sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.42rem;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-indent: 0;
+}
+
+section{
+    /*height: 100vh;*/
+}/*code to make each section take up a screen*/
 
 .disclaimer{
     margin: 1rem;
@@ -50,8 +69,9 @@ body{
     transition: 300ms;
 }
 .Question_1_images p, .Question_2_images p {
-    color: aliceblue;
-    font-weight: bold;
+    color: #f0f8ff;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.0625rem black ;
     padding: 0.5rem 0;
     margin: 0;
     font-size: 1.33rem;
@@ -60,7 +80,7 @@ body{
     left: 25%;
     right: 25%;
 }
-.Question_1_images div, .Question_2_images div{
+.Question_1_images button, .Question_2_images button{
     position: relative;
 }
 .Question_1_images img, .Question_2_images img{
@@ -69,9 +89,9 @@ body{
     transition-property: outline;
     transition: 150ms;
 }
-.Question_1_images div > img:hover,.Question_1_images div > img:focus-within, 
-.Question_2_images div > img:hover,.Question_2_images div > img:focus-within{
-    outline: solid rgb(16, 97, 97) 0.2rem;
+.Question_1_images button > img:hover,.Question_1_images button > img:focus-within, 
+.Question_2_images button > img:hover,.Question_2_images button > img:focus-within{
+    outline: solid #76afe7 0.2rem;
 }
 
 .Result{
