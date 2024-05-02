@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #bdbbbb;
+    color: black;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+}
+
+.disclaimer{
+    margin: 1rem;
+}
+.disclaimer h2{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #c55d12;
+}
+.disclaimer p{
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    max-width: 70ch;
+    line-height: 1.5;
+}
+
+.intro p {
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 0.75rem;
+    line-height: 1.5;
+}
+
+.Question_1, .Question_2{
+    margin: 1rem;
+}
+.Question_1_images, .Question_2_images{
+    text-align: center;
+    max-width: min-content;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: auto auto ;
+    place-content: center;
+    transition-property: filter;
+    transition: 300ms;
+}
+.Question_1_images p, .Question_2_images p {
+    color: aliceblue;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1.33rem;
+    position: absolute;
+    bottom: 0.8rem;
+    left:33%;
+}
+.Question_1_images div, .Question_2_images div{
+    position: relative;
+}
+.Question_1_images img, .Question_2_images img{
+    border-radius: 1rem;
+    margin: 0.75rem;
+    transition-property: outline;
+    transition: 150ms;
+}
+.Question_1_images div > img:hover,.Question_1_images div > img:focus-within, 
+.Question_2_images div > img:hover,.Question_2_images div > img:focus-within{
+    outline: solid rgb(16, 97, 97) 0.2rem;
+}
+.Result{
+    margin: 1rem;
+}
+
+.conclusion p{
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    max-width: 70ch;
+    line-height: 1.5;
+}
+
+footer{
+    background-color: black;
+    width: 100vw;
+}
