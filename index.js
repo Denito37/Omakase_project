@@ -8,6 +8,9 @@ let frr = 'ferry';
 let wlk = 'walking';
 let answer = []
 
+let Q1 = document.getElementsByClassName('Question_1');
+let Q2 = document.getElementsByClassName('Question_2')
+
 let Q1_1 = document.getElementsByClassName('adventourous') ;
 let Q1_2 = document.getElementsByClassName('minimalist') ;
 let Q1_3 = document.getElementsByClassName('laid_back') ;
@@ -16,6 +19,12 @@ let Q2_1 = document.getElementsByClassName('driving') ;
 let Q2_2 = document.getElementsByClassName('biking') ;
 let Q2_3 = document.getElementsByClassName('ferry') ;
 let Q2_4 = document.getElementsByClassName('walking') ;
+
+console.log(Q1)
+
+function scroll_to_Q1(){
+    Q1.scrollIntoView();
+}
 
 
 function adventure(){

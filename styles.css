@@ -26,6 +26,11 @@ button{
     text-decoration: none;
     text-indent: 0;
 }
+.scroll{
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #bdbbbb;
+}
 
 section{
     /*height: 100vh;*/
@@ -45,7 +50,6 @@ section{
     font-size: 1.5rem;
     max-width: 70ch;
     line-height: 1.5;
-    
 }
 
 .intro p {
@@ -71,7 +75,7 @@ section{
 .Question_1_images p, .Question_2_images p {
     color: #f0f8ff;
     font-weight: bolder;
-    -webkit-text-stroke: 0.0625rem black ;
+    -webkit-text-stroke: 0.03125rem black ;
     padding: 0.5rem 0;
     margin: 0;
     font-size: 1.33rem;
@@ -109,4 +113,13 @@ section{
 footer{
     background-color: black;
     width: 100vw;
+}
+footer img{
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .Question_1_images img, .Question_2_images img{
+        max-width: 33vw;
+    }
 }
