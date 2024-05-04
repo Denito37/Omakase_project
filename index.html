@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="index.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -12,8 +12,7 @@
 </head>
 <body>
     <header></header>
-    <!--<button class="scroll" onclick="scroll_to_Q1()">Scroll</button>
-    -->
+    
     <section class="disclaimer">
         <h2>Disclaimer</h2>
         <p>
@@ -26,29 +25,31 @@
             We credit and thank the teams behind these AI tools for their innovative contributions to 
             digital content creation.
         </p>
+        <button class="scroll" onclick="intro_Q()">continue</button>
     </section>
 
     <section class="intro">
         <p>Do you remember the time you got your first mobile phone?</p>
+        <button class="scroll" onclick="scroll_to_Q1()">continue</button>
     </section>
 
-    <section class="Question_1">
+    <section class="Question_1" id="QU1">
         <h3>What kind of lifestyle do you pursue?</h3>
 
         <div class="Question_1_images" tabindex="0" >
-            <button class="adventourous" onclick="adventure()" tabindex="-1">
+            <button class="adventourous" onclick="adventure(), scroll_to_Q2()" tabindex="-1">
                 <p>Adventourous</p>
                 <img src="images/main/adventourous.png" alt="adventourous">
             </button>
-            <button class="minimalist" onclick="minimalist()" tabindex="-1">
+            <button class="minimalist" onclick="minimalist(), scroll_to_Q2()" tabindex="-1">
                 <p>Minimalist</p>
                 <img src="images/main/minimalist.png" alt="minimalist">
             </button>
-            <button class="laid_back" onclick="slow()" tabindex="-1">
+            <button class="laid_back" onclick="slow(), scroll_to_Q2()" tabindex="-1">
                 <p>Laid back</p>
                 <img src="images/main/laid_back.png" alt="laid_back">
             </button>
-            <button class="hurry" onclick="hurry()" tabindex="-1">
+            <button class="hurry" onclick="hurry(), scroll_to_Q2()" tabindex="-1">
                 <p>In a hurry</p>
                 <img src="images/main/hurry.png" alt="hurry">
             </button>
@@ -60,19 +61,19 @@
         <h3>What mobility do you resonate the most?</h3>
 
         <div class="Question_2_images">
-            <button class="driving" onclick="drive()">
+            <button class="driving" onclick="drive(), scroll_to_Result()">
                 <p>Driving</p>
                 <img src="images/main/driving.png" alt="driving">
             </button>
-            <button class="biking" onclick="bike()">
+            <button class="biking" onclick="bike(), scroll_to_Result()">
                 <p>Biking</p>
                 <img src="images/main/biking.png" alt="biking">
             </button>
-            <button class="ferry" onclick="ferry()">
+            <button class="ferry" onclick="ferry(), scroll_to_Result()">
                 <p>Ferry</p>
                 <img src="images/main/ferry.png" alt="ferry">
             </button>
-            <button class="walking" onclick="walk()">
+            <button class="walking" onclick="walk(), scroll_to_Result()">
                 <p>Walking</p>
                 <img src="images/main/walking.png" alt="walking">
             </button>
@@ -81,6 +82,9 @@
     </section>
 
     <section class="Result">
+        <h3>Result</h3>
+
+        <button class="scroll" onclick="scroll_to_Conclusion()">continue</button>
 
     </section>
 
@@ -100,6 +104,7 @@
         <p>
             Before you leave, feel free to grab a ticket and enjoy our journey once more
         </p>
+        <button class="scroll" onclick="retry()">retry</button>
     </section>
 
     <footer>

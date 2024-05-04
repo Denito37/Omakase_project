@@ -8,7 +8,8 @@ let frr = 'ferry';
 let wlk = 'walking';
 let answer = []
 
-let Q1 = document.getElementsByClassName('Question_1');
+const intro = document.querySelector('.intro')
+const Q1 = document.getElementById('QU1');
 let Q2 = document.getElementsByClassName('Question_2')
 
 let Q1_1 = document.getElementsByClassName('adventourous') ;
@@ -20,12 +21,28 @@ let Q2_2 = document.getElementsByClassName('biking') ;
 let Q2_3 = document.getElementsByClassName('ferry') ;
 let Q2_4 = document.getElementsByClassName('walking') ;
 
-console.log(Q1)
+const result = document.querySelector('.Result')
+const conclusion = document.querySelector('.conclusion')
 
-function scroll_to_Q1(){
-    Q1.scrollIntoView();
+function intro_Q(){
+    intro.scrollIntoView({behavior:"smooth"});
 }
-
+function scroll_to_Q1(){
+    Q1.scrollIntoView({behavior:"smooth"});
+}
+function scroll_to_Q2(){
+    Q2[0].scrollIntoView({behavior:"smooth"});
+}
+function scroll_to_Result(){
+    result.scrollIntoView({behavior:"smooth"});
+}
+function scroll_to_Conclusion(){
+    conclusion.scrollIntoView({behavior:"smooth"});
+}
+function retry(){
+    Q1.scrollIntoView({behavior:"smooth"});
+    answer = []
+}
 
 function adventure(){
     answer =[]
