@@ -34,7 +34,7 @@ button{
 
 section{
     margin: 0;
-    height: 100vh;
+    height: 90vh;
 }/*code to make each section take up a screen*/
 
 .disclaimer{
@@ -131,8 +131,17 @@ footer img{
 }
 
 @media only screen and (max-width: 600px) {
+    .disclaimer p{
+        font-size: 1.2rem;
+    }
+    .conclusion p{
+        font-size: 1.2rem;
+    }
+    .intro p{
+        font-size: 1.2rem;
+    }
     .Question_1_images img, .Question_2_images img{
-        max-width: 33vw;
+        max-width: calc((80vw)/2);
     }
     .Question_1_images p, .Question_2_images p {
         font-size: 1rem;

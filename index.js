@@ -8,9 +8,10 @@ let frr = 'ferry';
 let wlk = 'walking';
 let answer = []
 
+const disclaimer = document.querySelector('.disclaimer')
 const intro = document.querySelector('.intro')
 const Q1 = document.getElementById('QU1');
-let Q2 = document.getElementsByClassName('Question_2')
+const Q2 = document.querySelector('.Question_2')
 
 let Q1_1 = document.getElementsByClassName('adventourous') ;
 let Q1_2 = document.getElementsByClassName('minimalist') ;
@@ -31,7 +32,7 @@ function scroll_to_Q1(){
     Q1.scrollIntoView({behavior:"smooth"});
 }
 function scroll_to_Q2(){
-    Q2[0].scrollIntoView({behavior:"smooth"});
+    Q2.scrollIntoView({behavior:"smooth"});
 }
 function scroll_to_Result(){
     result.scrollIntoView({behavior:"smooth"});
@@ -43,6 +44,49 @@ function retry(){
     Q1.scrollIntoView({behavior:"smooth"});
     answer = []
 }
+
+function myfunction(value) { 
+    const item = value.getBoundingClientRect(); 
+    return ( 
+        item.top >= 0 && 
+        item.left >= 0 && 
+        item.bottom <= ( 
+            window.innerHeight || 
+            document.documentElement.clientHeight) && 
+        item.right <= ( 
+            window.innerWidth || 
+            document.documentElement.clientWidth) 
+    ); 
+} 
+
+function keyListener(event){ 
+    event = event; //capture the event, and ensure we have an event
+    let key = event.key || event.which || event.keyCode; //find the key that was pressed
+    if(myfunction(disclaimer) && key == 's'){
+        intro_Q()
+    }
+    else if(myfunction(intro) && key == 's'){// intro not visible on scroll
+        scroll_to_Q1()
+    }
+    else if(myfunction(result) && key == 's'){
+        scroll_to_Conclusion()
+    }
+    else if(myfunction(conclusion) && key == 's'){ // conclusion not visible due to footer
+        retry()
+    }
+}
+
+window.addEventListener('keydown', keyListener)
+
+window.addEventListener('scroll', () => { 
+    if (myfunction(conclusion)) { 
+        console.log('Element is visible in viewport'); 
+    } else { 
+        console.log('Element is not visible in viewport'); 
+    } 
+}); 
+
+
 
 function adventure(){
     answer =[]
@@ -95,8 +139,4 @@ function walk(){
     answer.push(wlk);
     console.log(answer)
     console.log(`you like ${answer[0]} & ${answer[1]}.`)
-}
-
-if(answer.includes(adv) && answer.includes(drv)){
-    console.log(`you like ${adv} & ${drv}.`)
 }
