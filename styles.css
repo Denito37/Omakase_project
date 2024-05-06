@@ -11,6 +11,7 @@ body{
     text-align: center;
     display:flex;
     flex-direction: column;
+    /*overflow-y: hidden;*/ /*to prevent user from scrolling & only use buttons*/
 }
 button{
     background: none repeat scroll 0 0 transparent;
@@ -32,9 +33,12 @@ button{
     margin: 1rem;
     background-color: #f0f8ff;
 }
+.scroll img{
+    width: 25px;
+}
 
 section{
-    margin: 0;
+    margin: 4rem 0;
     height: 90vh;
 }/*code to make each section take up a screen*/
 
@@ -57,8 +61,7 @@ section{
 }
 
 .intro{
-    scroll-margin: 3rem;
-    scroll-margin: calc(100vh/2);
+    scroll-margin: calc(100vh/25);
 }
 .intro p {
     font-size: 1.5rem;
@@ -102,9 +105,10 @@ section{
     transition-property: outline;
     transition: 150ms;
 }
-.Question_1_images button > img:hover,.Question_1_images button > img:focus-within, 
-.Question_2_images button > img:hover,.Question_2_images button > img:focus-within{
-    outline: solid #c55d12 0.2rem;
+.Question_1_images button > img:hover,.Question_1_images button > img:focus-visible, 
+.Question_2_images button > img:hover,.Question_2_images button > img:focus{
+    outline: none;
+    box-shadow:  0 0 0 0.2rem #c55d12;
 }
 
 .Result{
@@ -136,7 +140,7 @@ footer img{
         font-size: 1.2rem;
     }
     .conclusion p{
-        font-size: 1.2rem;
+        font-size: 1.05rem;
     }
     .intro p{
         font-size: 1.2rem;

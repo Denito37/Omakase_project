@@ -25,31 +25,31 @@
             We credit and thank the teams behind these AI tools for their innovative contributions to 
             digital content creation.
         </p>
-        <button class="scroll" onclick="intro_Q()"><img src="images/icons/down.png" alt="down arrow"></button>
+        <button tabindex="-1" class="scroll" onclick="scroll_to(intro)"><img src="images/icons/down.png" alt="down arrow"></button>
     </section>
 
     <section class="intro">
         <p>Do you remember the time you got your first mobile phone?</p>
-        <button class="scroll" onclick="scroll_to_Q1()"><img src="images/icons/down.png" alt="down arrow"></button>
+        <button tabindex="-1" class="scroll" onclick="scroll_to(Q1)"><img src="images/icons/down.png" alt="down arrow"></button>
     </section>
 
     <section class="Question_1" id="QU1">
         <h3>What kind of lifestyle do you pursue?</h3>
 
-        <div class="Question_1_images" tabindex="0" >
-            <button class="adventourous" onclick="adventure(), scroll_to_Q2()" tabindex="-1">
+        <div class="Question_1_images" >
+            <button class="adventourous" onclick="adventure(), scroll_to(Q2)">
                 <p>Adventourous</p>
                 <img src="images/main/adventourous.png" alt="adventourous">
             </button>
-            <button class="minimalist" onclick="minimalist(), scroll_to_Q2()" tabindex="-1">
+            <button class="minimalist" onclick="minimalist(), scroll_to(Q2)">
                 <p>Minimalist</p>
                 <img src="images/main/minimalist.png" alt="minimalist">
             </button>
-            <button class="laid_back" onclick="slow(), scroll_to_Q2()" tabindex="-1">
+            <button class="laid_back" onclick="slow(), scroll_to(Q2)">
                 <p>Laid back</p>
                 <img src="images/main/laid_back.png" alt="laid_back">
             </button>
-            <button class="hurry" onclick="hurry(), scroll_to_Q2()" tabindex="-1">
+            <button class="hurry" onclick="hurry(), scroll_to(Q2)">
                 <p>In a hurry</p>
                 <img src="images/main/hurry.png" alt="hurry">
             </button>
@@ -61,19 +61,19 @@
         <h3>What mobility do you resonate the most?</h3>
 
         <div class="Question_2_images">
-            <button class="driving" onclick="drive(), scroll_to_Result()">
+            <button class="driving" onclick="drive(), scroll_to(result)">
                 <p>Driving</p>
                 <img src="images/main/driving.png" alt="driving">
             </button>
-            <button class="biking" onclick="bike(), scroll_to_Result()">
+            <button class="biking" onclick="bike(), scroll_to(result)">
                 <p>Biking</p>
                 <img src="images/main/biking.png" alt="biking">
             </button>
-            <button class="ferry" onclick="ferry(), scroll_to_Result()">
+            <button class="ferry" onclick="ferry(), scroll_to(result)">
                 <p>Ferry</p>
                 <img src="images/main/ferry.png" alt="ferry">
             </button>
-            <button class="walking" onclick="walk(), scroll_to_Result()">
+            <button class="walking" onclick="walk(), scroll_to(result)">
                 <p>Walking</p>
                 <img src="images/main/walking.png" alt="walking">
             </button>
@@ -84,7 +84,7 @@
     <section class="Result">
         <h3>Result</h3>
 
-        <button class="scroll" onclick="scroll_to_Conclusion()"><img src="images/icons/down.png" alt="down arrow"></button>
+        <button tabindex="-1" class="scroll" onclick="scroll_to(conclusion)"><img src="images/icons/down.png" alt="down arrow"></button>
 
     </section>
 
@@ -104,7 +104,7 @@
         <p>
             Before you leave, feel free to grab a ticket and enjoy our journey once more
         </p>
-        <button class="scroll" onclick="retry()"><img src="images/icons/retry.png" alt="retry"></button>
+        <button tabindex="-1" class="scroll" onclick="retry()"><img src="images/icons/retry.png" alt="retry"></button>
     </section>
 
     <footer>
