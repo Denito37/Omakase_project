@@ -8,6 +8,7 @@ let frr = 'ferry';
 let wlk = 'walking';
 let answer = []
 
+const controls = document.querySelector('.controlText')
 const disclaimer = document.querySelector('.disclaimer')
 const intro = document.querySelector('.intro')
 const Q1 = document.getElementById('QU1');
@@ -27,11 +28,21 @@ let Q2_4 = document.getElementsByClassName('walking') ;
 
 function scroll_to(section){
     section.scrollIntoView({behavior:"smooth"});
+    if(section == disclaimer || section == intro || section == result){
+        controls.innerText = 'Press S to continue'
+    }
+    else if(section == Q1 || section == Q2){
+        controls.innerText = 'Choose an answer'
+    }
+    else if (section == conclusion){
+        controls.innerText = 'Press S to retry'
+    }
 }
 function retry(){
     Q1.scrollIntoView({behavior:"smooth"});
     answer = [];
     videoResult();
+    controls.innerText = ''
 }
 
 function myfunction(value) { // checks if section is visible

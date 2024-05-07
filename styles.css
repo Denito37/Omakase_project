@@ -42,6 +42,19 @@ section{
     height: 90vh;
 }/*code to make each section take up a screen*/
 
+.controls{
+    width: 125px;
+    height: 125px;
+    padding: 1rem;
+    margin: 0.25rem;
+    outline: solid black 1px;
+    position: fixed;
+    right: 0;
+}
+.controls p{
+    padding: 2rem 0;
+}
+
 .disclaimer{
     margin: 3rem auto;
     scroll-margin: 3rem;
@@ -124,7 +137,6 @@ section{
     min-height: 60vh;
     border-radius: 1rem;
     margin: 1rem auto;
-    outline: solid red ;
 }
 
 .conclusion{
@@ -148,6 +160,9 @@ footer img{
 }
 
 @media only screen and (max-width: 600px) {
+    .controls{
+        display: none
+    }
     .disclaimer p{
         font-size: 1.2rem;
     }
@@ -162,5 +177,11 @@ footer img{
     }
     .Question_1_images p, .Question_2_images p {
         font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1025px){
+    .controls{
+        display: none
     }
 }
