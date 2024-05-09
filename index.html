@@ -19,6 +19,11 @@
         </p>
     </div>
     
+    <section class="titleScreen">
+        <video src="videos/background.mp4" type = 'video/mp4' autoplay muted loop></video>
+        <p>Press Any Key To Continue</p>
+        <button tabindex="-1" class="scroll" onclick="scroll_to(disclaimer)"><img src="images/icons/down.png" alt="down arrow"></button>
+    </section>
     <section class="disclaimer">
         <h2>Disclaimer</h2>
         <p>
@@ -35,7 +40,15 @@
     </section>
 
     <section class="intro">
-        <p>Do you remember the time you got your first mobile phone?</p>
+        <p>
+            Do you remember the time you got your first mobile phone?
+        </p>
+        <p>what do we expect next?</p>
+        <p>what about we get rid of the screen?</p>
+        <p>intuitive interfaces that ai processes your intentions from brain signal directly to services - applications - search engines;</p>
+        <p>the visual interface can be input to your sensory, will be clear and crisp even more than reality.</p>
+        <p>going beyond screen,</p>
+        <p>you decide where you are.</p>
         <button tabindex="-1" class="scroll" onclick="scroll_to(Q1)"><img src="images/icons/down.png" alt="down arrow"></button>
     </section>
 
@@ -90,7 +103,7 @@
     <section class="Result">
         <h3>Result</h3>
 
-        <video class="video" controls tabindex="-1"></video>
+        <video class="video" controls autoplay tabindex="-1"></video>
 
         <button tabindex="-1" class="scroll" onclick="scroll_to(conclusion)"><img src="images/icons/down.png" alt="down arrow"></button>
 
@@ -112,15 +125,18 @@
         <p>
             Before you leave, feel free to grab a ticket and enjoy our journey once more
         </p>
-        <button tabindex="-1" class="scroll" onclick="retry()"><img src="images/icons/retry.png" alt="retry"></button>
+        <button tabindex="-1" class="scroll" onclick="scroll_to(endCard)"><img src="images/icons/down.png" alt="down arrow"></button>
     </section>
 
-    <footer>
+    <section class="endCard">
         <div class="logo">
             <img src="images/bottom/omakase_logo.png" alt="omakase team logo">
             <img src="images/bottom/Pratt_Honda_black.png" alt="Pratt institute & Honda logo ">
         </div>
-    </footer>
+        <button tabindex="-1" class="scroll retry" onclick="retry()"><img src="images/icons/retry.png" alt="retry"></button>
+    </section>
+
+    <footer></footer>
     
 </body>
 </html>

@@ -8,6 +8,7 @@ let frr = 'ferry';
 let wlk = 'walking';
 let answer = []
 
+const titleCard = document.querySelector('.titleScreen')
 const controls = document.querySelector('.controlText')
 const disclaimer = document.querySelector('.disclaimer')
 const intro = document.querySelector('.intro')
@@ -16,6 +17,7 @@ const Q2 = document.querySelector('.Question_2')
 const result = document.querySelector('.Result')
 const resultVideo = document.querySelector('.Result .video')
 const conclusion = document.querySelector('.conclusion')
+const endCard = document.querySelector('.endCard')
 
 let Q1_1 = document.getElementsByClassName('adventourous') ;
 let Q1_2 = document.getElementsByClassName('minimalist') ;
@@ -26,20 +28,25 @@ let Q2_2 = document.getElementsByClassName('biking') ;
 let Q2_3 = document.getElementsByClassName('ferry') ;
 let Q2_4 = document.getElementsByClassName('walking') ;
 
+console.log(titleCard.getBoundingClientRect())
+console.log(disclaimer.getBoundingClientRect())
+console.log(titleCard)
+console.log(intro)
+
 function scroll_to(section){
     section.scrollIntoView({behavior:"smooth"});
-    if(section == disclaimer || section == intro || section == result){
+    if(section == disclaimer || section == intro || section == result || section == conclusion){
         controls.innerText = 'Press S to continue'
     }
     else if(section == Q1 || section == Q2){
         controls.innerText = 'Choose an answer'
     }
-    else if (section == conclusion){
+    else if (section == endCard){
         controls.innerText = 'Press S to retry'
     }
 }
 function retry(){
-    Q1.scrollIntoView({behavior:"smooth"});
+    disclaimer.scrollIntoView({behavior:"smooth"});
     answer = [];
     videoResult();
     controls.innerText = ''
@@ -72,6 +79,9 @@ function keyListener(event){
         scroll_to(conclusion)
     }
     else if(myfunction(conclusion) && key == 's'){ 
+        scroll_to(endCard)
+    }
+    else if (myfunction(endCard && key == 's')){
         retry()
     }
 }

@@ -11,7 +11,7 @@ body{
     text-align: center;
     display:flex;
     flex-direction: column;
-    /*overflow-y: hidden;*/ /*to prevent user from scrolling & only use buttons*/
+    /*overflow-x: hidden;*/ /*to prevent user from scrolling & only use buttons*/
 }
 button{
     background: none repeat scroll 0 0 transparent;
@@ -32,16 +32,51 @@ button{
     padding: 1rem;
     margin: 1rem;
     background-color: #f0f8ff;
+    background-color: transparent;
+    position: absolute;
+    bottom: 10vh;
+}
+.scroll:not(.disclaimer > .scroll){
+    right: 47vw;
+    left: 47vw;
+}
+.retry{
+    background-color: #f0f8ff !important;
 }
 .scroll img{
     width: 25px;
 }
 
 section{
-    margin: 4rem 0;
+    margin: 2vh 0;
     height: 90vh;
+    position: relative;
 }/*code to make each section take up a screen*/
 
+.titleScreen{
+    position: relative;
+    margin: 0;
+    place-content: center;
+    align-content: center;
+}
+.titleScreen video{
+    z-index: -1;
+    opacity: 0.75;
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+    object-fit: fill;
+    left: 0;
+    top: 0;
+
+}
+.titleScreen p{
+    z-index: 1;
+    font-size: 1.75rem;
+    display: flex;
+    place-content: center;
+    align-content: center;
+}
 .controls{
     width: 125px;
     height: 125px;
@@ -151,12 +186,23 @@ section{
     line-height: 2;
 }
 
-footer{
+.endCard{
     background-color: black;
-    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 4rem 0 0 0;
+    padding: 2rem 0;
+    display: flex;
+    place-content: center;
+    align-content: center;
+    align-items: center;
+
 }
-footer img{
+.endCard img{
     max-width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    margin: 0 auto;
 }
 
 @media only screen and (max-width: 600px) {
