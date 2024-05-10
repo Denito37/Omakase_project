@@ -18,6 +18,7 @@ const result = document.querySelector('.Result')
 const resultVideo = document.querySelector('.Result .video')
 const conclusion = document.querySelector('.conclusion')
 const endCard = document.querySelector('.endCard')
+let sections = [titleCard,disclaimer,intro,Q1,Q2,result,conclusion,endCard]
 
 let Q1_1 = document.getElementsByClassName('adventourous') ;
 let Q1_2 = document.getElementsByClassName('minimalist') ;
@@ -28,11 +29,36 @@ let Q2_2 = document.getElementsByClassName('biking') ;
 let Q2_3 = document.getElementsByClassName('ferry') ;
 let Q2_4 = document.getElementsByClassName('walking') ;
 
-console.log(titleCard.getBoundingClientRect())
-console.log(disclaimer.getBoundingClientRect())
-console.log(titleCard)
-console.log(intro)
+const keyListener = (e)=>{ 
+    let key = e.key || e.which || e.keyCode; //find the key that was pressed
+    console.log(key)
+    if(key == 's'){
+        scroll_to(endCard)
+        // add counter to keep track of current section 
+        console.log('gfyufuyf')
+    }
+}
+const options = {
+    root: null,
+    threshold: 0.8
+};
+const callback = function(sections, observer) {
+    sections.forEach((entry) => {
+        if(entry.isIntersecting){
+            console.log(entry.target, 'is intersecting')
+        }
+    });
+}
+const observer = new IntersectionObserver(callback, options); 
 
+sectionObserver(sections)
+window.addEventListener('keydown', keyListener)
+
+function sectionObserver(section){
+    for(let i = 0; i<section.length; i++){
+        observer.observe(section[i])
+    }
+}
 function scroll_to(section){
     section.scrollIntoView({behavior:"smooth"});
     if(section == disclaimer || section == intro || section == result || section == conclusion){
@@ -44,6 +70,12 @@ function scroll_to(section){
     else if (section == endCard){
         controls.innerText = 'Press S to retry'
     }
+    if(section != result){
+        resultVideo.pause()
+    }
+    else if (section == result){
+        resultVideo.play()
+    }
 }
 function retry(){
     disclaimer.scrollIntoView({behavior:"smooth"});
@@ -51,12 +83,11 @@ function retry(){
     videoResult();
     controls.innerText = ''
 }
-
 function myfunction(value) { // checks if section is visible
     const item = value.getBoundingClientRect(); 
     return ( 
-        item.top >= 0 && 
-        item.left >= 0 && 
+        item.top >= 0 && item.top < window.innerHeight && 
+        item.left >= 0 && item.left < window.innerWidth && 
         item.bottom <= ( 
             window.innerHeight || 
             document.documentElement.clientHeight) && 
@@ -65,28 +96,6 @@ function myfunction(value) { // checks if section is visible
             document.documentElement.clientWidth) 
     ); 
 } 
-
-function keyListener(event){ 
-    event = event; //capture the event, and ensure we have an event
-    let key = event.key || event.which || event.keyCode; //find the key that was pressed
-    if(myfunction(disclaimer) && key == 's'){
-        scroll_to(intro)
-    }
-    else if(myfunction(intro) && key == 's'){
-        scroll_to(Q1)
-    }
-    else if(myfunction(result) && key == 's'){
-        scroll_to(conclusion)
-    }
-    else if(myfunction(conclusion) && key == 's'){ 
-        scroll_to(endCard)
-    }
-    else if (myfunction(endCard && key == 's')){
-        retry()
-    }
-}
-window.addEventListener('keydown', keyListener)
-
 function adventure(){
     answer =[]
     answer.push(adv)
