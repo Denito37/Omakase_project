@@ -38,6 +38,7 @@ const keyListener = (e)=>{
         console.log('gfyufuyf')
     }
 }
+// archived In-progress keyboard controls
 const options = {
     root: null,
     threshold: 0.8
@@ -59,8 +60,11 @@ function sectionObserver(section){
         observer.observe(section[i])
     }
 }
+
+
 function scroll_to(section){
     section.scrollIntoView({behavior:"smooth"});
+    /*
     if(section == disclaimer || section == intro || section == result || section == conclusion){
         controls.innerText = 'Press S to continue'
     }
@@ -70,6 +74,7 @@ function scroll_to(section){
     else if (section == endCard){
         controls.innerText = 'Press S to retry'
     }
+    */
     if(section != result){
         resultVideo.pause()
     }
@@ -143,52 +148,52 @@ function walk(){
 function videoResult(){
     resultVideo.load()
     if(answer.includes(adv) && answer.includes(drv)){
-        resultVideo.innerHTML = ('<source src="videos/AdvDriving.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Adventurous_Driving_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(adv) && answer.includes(bkg)){
-        resultVideo.innerHTML = ('<source src="videos/AdvBiking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Adventurous_Biking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(adv) && answer.includes(frr)){
-        resultVideo.innerHTML = ('<source src="videos/AdvFerry.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Adventurous_Ferries_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(adv) && answer.includes(wlk)){
-        resultVideo.innerHTML = ('<source src="videos/AdvWalking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Adventurous_Walking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(min) && answer.includes(drv)){
-        resultVideo.innerHTML = ('<source src="videos/MinimalistDriving.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Minimalist_Driving_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(min) && answer.includes(bkg)){
-        resultVideo.innerHTML = ('<source src="videos/MinimalistBiking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Minimalist_Biking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(min) && answer.includes(frr)){
-        resultVideo.innerHTML = ('<source src="videos/MinimalistFerry.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Minimalist_Ferries_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(min) && answer.includes(wlk)){
-        resultVideo.innerHTML = ('<source src="videos/MinimalistWalking.mp4" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Minimalist_Walking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(LB) && answer.includes(drv)){
-        resultVideo.innerHTML = ('<source src="videos/SlowDriving.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Laidback_Driving_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(LB) && answer.includes(bkg)){
-        resultVideo.innerHTML = ('<source src="videos/SlowBiking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Laidback_Biking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(LB) && answer.includes(frr)){
-        resultVideo.innerHTML = ('<source src="videos/SlowFerry.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Laidback_Ferries_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(LB) && answer.includes(wlk)){
-        resultVideo.innerHTML = ('<source src="videos/SlowWalking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Laidback_Walking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(InH) && answer.includes(drv)){
-        resultVideo.innerHTML = ('<source src="videos/FastDriving.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Fast-paced Driving_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(InH) && answer.includes(bkg)){
-        resultVideo.innerHTML = ('<source src="videos/FastBiking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Fast-paced Biking_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(InH) && answer.includes(frr)){
-        resultVideo.innerHTML = ('<source src="videos/FastFerry.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Fast-paced Ferries_Final.mp4" type="video/mp4">')
     }
     else if(answer.includes(InH) && answer.includes(wlk)){
-        resultVideo.innerHTML = ('<source src="videos/FastWalking.mkv" type="video/mp4">')
+        resultVideo.innerHTML = ('<source src="videos/Fast-paced Walking_Final.mp4" type="video/mp4">')
     }
     else if (answer.length == 0) {
         resultVideo.innerHTML= ('')
