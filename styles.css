@@ -226,3 +226,11 @@ section{
         display: none
     }
 }
+
+/*styling for tall screens*/
+@media only screen and (min-height:1200px){
+    p:not(.Question_1_images p, .Question_2_images p){
+        font-size: 1.75rem !important;
+        line-height: 3.5 !important;
+    }
+}
