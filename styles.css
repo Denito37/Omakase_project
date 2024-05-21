@@ -36,10 +36,11 @@ button{
 }
 .retry img{
     font-size: 2rem;
+    min-width: 25px;
 }
 
 .scroll img{
-    width: 25px;
+    min-width: 25px;
 }
 
 section{
@@ -139,9 +140,11 @@ section{
 .Question_1_images button, .Question_2_images button{
     position: relative;
 }
+/*styling for tall screens*/
 .Question_1_images img, .Question_2_images img{
     max-width: calc((80vw)/2);
     max-height: calc((80vh)/2);
+    min-width: calc((30vw)/2);
     border-radius: 1rem;
     margin: 0.75rem;
     transition-property: outline;
@@ -160,9 +163,11 @@ section{
     flex-direction: column;
     align-items: center;
 }
+/*styling for tall screens*/
 .Result .video{
-    width: 320px;
+    min-width: 320px;
     min-height: 60vh;
+    max-height: calc(70vh);
     border-radius: 1rem;
     margin: 1rem auto;
 }
@@ -230,7 +235,15 @@ section{
 /*styling for tall screens*/
 @media only screen and (min-height:1200px){
     p:not(.Question_1_images p, .Question_2_images p){
-        font-size: 1.75rem !important;
+        font-size: 2rem !important;
+        font-weight: 500 !important;
         line-height: 3.5 !important;
     }
+    h3{
+        font-size: 2rem !important;
+    }
+.Question_1_images p, .Question_2_images p{
+    font-size: 1.5rem !important;
+}
+
 }
